@@ -11,8 +11,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem "font-awesome-rails"
 gem 'autoprefixer-rails'
-# flat-ui-sass is a SASS port of Designmodo's Flat-UI Free
-gem 'flat-ui-sass', github: 'wingrunr21/flat-ui-sass'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

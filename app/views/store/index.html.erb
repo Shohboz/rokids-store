@@ -1,0 +1,17 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+
+<div class="row">
+	<% @products.each do |product| %>
+	    <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <%= image_tag product.image_url, :style => "height: 200px" %>
+		      <div class="caption">
+		        <h3><%= product.title %></h3>
+		        <span class="price"><%= product.price %></span>
+		      </div>
+		    </div>
+	  	</div>
+  	<% end %>
+</div>

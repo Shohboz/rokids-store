@@ -9,10 +9,3 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += %w( flat-ui/switch/mask.png )
-Rails.application.config.assets.precompile += %w( flat-ui/tile/ribbon.png )
-Rails.application.config.assets.precompile += %w( flat-ui/tile/ribbon-2x.png )
-Rails.application.config.assets.precompile += %w( flat-ui/todo/todo.png )
-Rails.application.config.assets.precompile += %w( flat-ui/todo/done.png )
-Rails.application.config.assets.precompile += %w( flat-ui/todo/todo-2x.png )
-Rails.application.config.assets.precompile += %w( flat-ui/todo/done-2x.png )
