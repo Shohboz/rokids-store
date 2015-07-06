@@ -1,0 +1,16 @@
+/*
+$links_color: #888785;
+$thumbnail-border: #fff;
+$thumbnail-caption-color: $links_color;
+$navbar-default-link-hover-color: #a2cc01;
+$navbar-default-link-color: $links_color;
+$navbar-default-bg: #fff;
+$navbar-default-border: #fff;
+*/
+@import "materialize/components/color";
+$primary-color: color("blue", "lighten-2") !default;
+
+@import "materialize/components/variables";
+.card.medium .card-image {
+  height: 320px !important;
+}
