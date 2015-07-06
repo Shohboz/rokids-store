@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row" style="padding-top: 50px;">
+  <div class="col l8 m8">
+    <div class="col l12 m12">
+      <%= image_tag(@product.image_url, class: "materialboxed hoverable", width: "400") %>
+    </div>
+  </div>
+  <div class="col l4 m4">
+    <div class="card-panel white">
+      <div style="padding: 0.5rem;">
+
+        <ul>
+          <li>
+            <h5>
+              <%= @product.title %>
+            </h5>
+            <label>Артикул</label>
+            </p>
+          </li>
+        </ul>
+
+        <br>
+
+        <label>Цена:</label>
+
+        <h5 class="pink-text accent-2">
+          <%= number_to_currency(@product.price) %>
+        </h5>
+
+        <br>
+        
+        <div class="input-field col s12" style="margin-bottom: 10px;">
+          <select>
+            <option value="" disabled selected>Выберите значение</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <label>Количество:</label>
+        </div>
+
+        <%= link_to 'Добавить в корзину', line_items_path(product_id: @product), class: "btn btn-large yellow accent-4 waves-effect waves-light", method: :post %>
+
+        <hr>
+
+        <ul>
+          <li>            
+            <label>Информация:</label>
+            <p>
+              <%= sanitize @product.description %>
+            </p>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
