@@ -11,12 +11,13 @@ $navbar-default-border: #fff;
 $primary-color: color("cyan", "lighten-2") !default;
 
 @import "materialize/components/variables";
-.card.medium .card-image {
-  height: 320px !important;
+.card.small .card-image {
+  height: 230px !important;
 }
 
 main {
 	min-height: 400px;
+	padding-top: 50px;
 }
 
 hr {

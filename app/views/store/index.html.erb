@@ -5,12 +5,14 @@
 <div class="row">
 	<% @products.each do |product| %>
 		<div class="col s12 m4">
-		  <div class="card medium hoverable">
-		    <div class="card-image">
-		      <%= image_tag product.image_url %>
-		    </div>
+		  <div class="card small hoverable card-image waves-effect waves-block waves-light">
+		  	<%= link_to store_show_path(product.id) do %>
+			    <div class="card-image">
+			      <%= image_tag product.image_url %>
+			    </div>
+		    <% end %>
 		    <div class="card-action">
-		      <a href="#"><%= product.title %></a>
+		      <%= link_to product.title, store_show_path(product.id) %>
 		      <span class="price"><%= product.price %></span>
 		    </div>
 		  </div>
