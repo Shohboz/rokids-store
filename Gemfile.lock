@@ -166,6 +166,7 @@ DEPENDENCIES
   jquery-rails
   materialize-sass
   mysql2
+  nokogiri
   pg
   rails (= 4.2.1)
   sass-rails (~> 5.0)
