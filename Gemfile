@@ -45,11 +45,14 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :jruby]
 end
 
-group :production do
-  #gem 'mysql2'
+# Add support for the MySQL
+group :production, :mysql do
+  gem 'mysql2'
+end
+
+group :production, :postgresql do
   gem 'pg'
-  gem 'rails_12factor'
 end
