@@ -38,8 +38,6 @@ end
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 platforms :jruby, :mingw, :mswin do
@@ -52,6 +50,8 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 # Add support for the MySQL
