@@ -6,6 +6,25 @@ gem 'rails', '4.1.4'
 
 gem 'rake', '~> 0.9.6'
 # Use SCSS for stylesheets
+# Add support for the MySQL
+group :production, :mysql do
+  gem 'mysql2'
+end
+
+group :production, :postgresql do
+  gem 'pg'
+end
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  #gem 'byebug'
+
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  #gem 'web-console', '~> 2.0'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+end
+
 gem 'sass-rails', '~> 5.0'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.4'
@@ -21,13 +40,13 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Hirb provides a mini view framework for console applications and uses it to improve ripl(irb)'s default inspect output.
-gem 'hirb'
+#gem 'hirb'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+#gem 'jbuilder', '~> 2.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 group :doc do
@@ -42,23 +61,4 @@ end
 # gem 'capistrano-rails', group: :development
 platforms :jruby, :mingw, :mswin do
   gem 'tzinfo-data'
-end
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
-end
-
-# Add support for the MySQL
-group :production, :mysql do
-  gem 'mysql2'
-end
-
-group :production, :postgresql do
-  gem 'pg'
 end
