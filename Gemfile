@@ -7,23 +7,23 @@ gem 'rails', '4.1.4'
 gem 'rake', '~> 0.9.6'
 # Use SCSS for stylesheets
 # Add support for the MySQL
-#group :production, :mysql  do
-gem 'mysql2'
-#end
+group :production, :mysql  do
+  gem 'mysql2'
+end
 
-#group :production, :postgresql do
-#  gem 'pg'
-#end
+group :production, :postgresql do
+  gem 'pg'
+end
 
-#group :development, :test do
+group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   #gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   #gem 'web-console', '~> 2.0'
   # Use sqlite3 as the database for Active Record
-#  gem 'sqlite3'
-#send
+  gem 'sqlite3'
+end
 
 gem 'sass-rails', '~> 5.0'
 # Bootstrap
