@@ -7,7 +7,7 @@ gem 'rails', '4.1.4'
 gem 'rake', '~> 0.9.6'
 # Use SCSS for stylesheets
 # Add support for the MySQL
-group :production, :mysql do
+group :production, :mysql  do
   gem 'mysql2'
 end
 
