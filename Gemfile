@@ -4,13 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 
-gem 'rake', '~> 0.9.6'
-# Use SCSS for stylesheets
-# Add support for the MySQL
-group :production, :mysql  do
-  gem 'mysql2'
-end
-
 group :production, :postgresql do
   gem 'pg'
 end
@@ -28,7 +21,7 @@ end
 gem 'sass-rails', '~> 5.0'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.4'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'autoprefixer-rails'
 # materialize-sass is a Sass powered version of Materialize, a modern responsive front-end framework based on Material Design.
 gem 'materialize-sass'
