@@ -14,7 +14,7 @@
 		    <% end %>
 		    <div class="card-action">
 		      <%= link_to product.title, store_show_path(product.id) %>
-		      <span class="price showcase"><%= number_to_currency product.price %></span>
+		      <span class="price showcase"><%= number_to_currency(product.price, :precision => (product.price.round == product.price) ? 0 : 2) %></span>
 		    </div>
 		  </div>
 		</div>
