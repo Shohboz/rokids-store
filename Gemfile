@@ -52,6 +52,4 @@ end
 # gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-platforms :jruby, :mingw, :mswin do
-  gem 'tzinfo-data'
-end
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
