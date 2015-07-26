@@ -9,6 +9,7 @@ $navbar-default-border: #fff;
 */
 @import "materialize/components/color";
 $primary-color: color("cyan", "lighten-2") !default;
+$price-color: color("pink", "accent-2");
 
 @import "materialize/components/variables";
 .card.small .card-image {
@@ -24,4 +25,17 @@ hr {
 	opacity: 0.2;
 	margin-top: 15px;
 	margin-bottom: 15px;
+}
+.card-image .product-image {
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+}
+.price {	
+	color: $price-color;
+	&.showcase {
+		position: absolute;
+		right: 20px;
+	}
 }
