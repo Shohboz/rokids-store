@@ -18,6 +18,9 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+# Gretel is a Ruby on Rails plugin that makes it easy yet flexible to create breadcrumbs.
+gem 'gretel'
+
 gem 'sass-rails', '~> 5.0'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.4'
