@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  resources :orders
+
   resources :line_items
   resources :carts
+  get 'store/payment', as: 'payment'
+  get 'store/contacts', as: 'contacts'
   get 'store/index'
   get 'store/:id', to: 'store#show', as: 'store_show'
   resources :products

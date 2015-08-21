@@ -4,7 +4,8 @@
 
 	<tr class="total_line">
 		<td>
-			<%= link_to 'Очистить корзину', @cart, class: "btn btn-large cyan lighten-2 waves-effect waves-light", method: :delete, remote: true %>
+			<%= link_to 'Оформить заказ', new_order_path, class: "btn btn-large cyan lighten-1 waves-effect waves-light" %>
+			<%= link_to 'Очистить корзину', @cart, class: "btn btn-large btn-flat waves-effect waves-light", method: :delete, remote: true %>
 		</td>
 		<td>Итог</td>
 		<td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
