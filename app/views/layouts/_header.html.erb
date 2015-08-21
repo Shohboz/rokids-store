@@ -13,14 +13,16 @@
   </div>
 </nav>
 
-<div id="cart-view" class="modal">
+<div id="cart-view" class="modal container">
+    <div class="modal-header" style="margin-top: 5px;">
+      <a href="#!" class="right modal-action modal-close waves-effect waves-green btn-flat">
+        <i class="fa fa-times"></i>
+      </a>
+    </div>
     <div class="modal-content">
     	<div id="cart">
-      		<%= render @cart %>
-      	</div>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      	<%= render @cart %>
+      </div>
     </div>
 </div>
 
