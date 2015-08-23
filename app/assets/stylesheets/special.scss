@@ -39,3 +39,22 @@ hr {
 		right: 20px;
 	}
 }
+.modal-cart-trigger .new .badge {
+	line-height: 20px;
+	min-width: auto;
+	left: 35px;
+	top: 5px;
+}
+.modal-cart-trigger {
+	span.badge.new {
+		line-height: 20px;
+		min-width: auto;
+		left: 35px;
+		right: auto;
+		top: 5px;
+		
+		&:after {
+    		content: "";
+    	}
+	}
+}

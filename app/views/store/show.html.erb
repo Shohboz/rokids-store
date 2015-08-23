@@ -3,62 +3,65 @@
 <% breadcrumb :store, @product %>
 
 <div class="row" style="padding-top: 50px;">
-  <div class="col l8 m8">
-    <div class="col l12 m12">
-      <%= image_tag(@product.image_url, class: "materialboxed hoverable", width: "400") %>
+  <div class="row">
+    <div class="col l8 m8">
+      <div class="col l12 m12">
+        <%= image_tag(@product.image_url, class: "materialboxed hoverable", width: "400") %>
+      </div>
     </div>
-  </div>
-  <div class="col l4 m4">
-    <div class="card-panel white">
-      <div style="padding: 0.5rem;">
+    <div class="col l4 m4">
+      <div class="card-panel white">
+        <div style="padding: 0.5rem;">
 
-        <ul>
-          <li>
-            <h5>
-              <%= @product.title %>
-            </h5>
-            <label>Артикул</label>
-            </p>
-          </li>
-        </ul>
+          <ul>
+            <li>
+              <h5>
+                <%= @product.title %>
+              </h5>
+              <label>Артикул</label>
+              </p>
+            </li>
+          </ul>
 
-        <br>
+          <br>
 
-        <label>Цена:</label>
+          <label>Цена:</label>
 
-        <h5 class="price">
-          <%= number_to_currency(@product.price, :precision => (@product.price.round == @product.price) ? 0 : 2) %>
-        </h5>
+          <h5 class="price">
+            <%= number_to_currency(@product.price, :precision => (@product.price.round == @product.price) ? 0 : 2) %>
+          </h5>
 
-        <br>
-        
-        <div class="input-field col s12" style="margin-bottom: 10px;">
-          <select>
-            <option value="" disabled selected>Выберите значение</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-          <label>Количество:</label>
+          <br>
+          
+          <div class="input-field col s12" style="margin-bottom: 10px;">
+            <select>
+              <option value="" disabled selected>Выберите значение</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <label>Количество:</label>
+          </div>
+
+          <%= link_to 'Добавить в корзину', line_items_path(product_id: @product), class: "btn btn-large red accent-2 waves-effect waves-light modal-trigger", method: :post, remote: true %>
+
         </div>
 
-        <%= link_to 'Добавить в корзину', line_items_path(product_id: @product), class: "btn btn-large red accent-2 waves-effect waves-light modal-trigger", method: :post, remote: true %>
-
-        <hr>
-
-        <ul>
-          <li>            
-            <label>Информация:</label>
-            <p>
-              <%= sanitize @product.description %>
-            </p>
-          </li>
-        </ul>
-
       </div>
-
     </div>
   </div>
+
+  <ul class="collection with-header">
+    <li class="collection-header">
+      <div class="section">
+        <h5>Информация о товаре</h5>
+      </div>
+    </li>
+
+    <li class="collection-item">
+      <%= sanitize @product.description %>
+    </li>
+  </ul>
 </div>
 
 

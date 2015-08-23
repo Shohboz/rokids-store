@@ -11,6 +11,9 @@
     	<li>
         	<a class="waves-effect waves-light modal-cart-trigger" href="#cart-view">
         		<i class="fa fa-shopping-cart"></i>
+            <div id="cart-badge">
+              <%= render partial: 'carts/badge', object: @cart %>
+            </div>
         	</a>
     	</li>
     </ul>

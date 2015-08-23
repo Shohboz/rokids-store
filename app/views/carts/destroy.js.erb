@@ -1,1 +1,2 @@
 $('#cart').html("<%= escape_javascript render(@cart) %>");
+$('#cart-badge').html("<%= escape_javascript render partial: 'carts/badge', object: @cart %>");
