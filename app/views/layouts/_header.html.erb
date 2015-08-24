@@ -2,41 +2,20 @@
   <div class="nav-wrapper container">
     <%= link_to 'Logo', store_path, class: "brand-logo left waves-effect waves-light" %>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      	<li>
-          <%= link_to 'Оплата и доставка', payment_path, class: "waves-effect waves-light" %>
-        </li>
-      	<li>
-          <%= link_to 'Контакты', contacts_path, class: "waves-effect waves-light" %>
-        </li>
     	<li>
-        	<a class="waves-effect waves-light modal-cart-trigger" href="#cart-view">
-        		<i class="fa fa-shopping-cart"></i>
-            <div id="cart-badge">
-              <%= render partial: 'carts/badge', object: @cart %>
-            </div>
-        	</a>
+        <%= link_to 'Оплата и доставка', payment_path, class: "waves-effect waves-light" %>
+      </li>
+    	<li>
+        <%= link_to 'Контакты', contacts_path, class: "waves-effect waves-light" %>
+      </li>
+    	<li>
+        <%= link_to @cart, class: "waves-effect waves-light"  do %>
+          <i class="fa fa-shopping-cart"></i>
+          <div id="cart-badge">
+            <%= render partial: 'carts/badge', object: @cart %>
+          </div>
+        <% end %>
     	</li>
     </ul>
   </div>
 </nav>
-
-<div id="cart-view" class="modal container">
-    <div class="modal-header" style="margin-top: 5px;">
-      <a href="#!" class="right modal-action modal-close waves-effect waves-green btn-flat">
-        <i class="fa fa-times"></i>
-      </a>
-    </div>
-    <div class="modal-content">
-      <div id="cart">
-        <%= render @cart %>
-      </div>
-    </div>
-</div>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-      $('.modal-cart-trigger').leanModal({
-          dismissible: true
-        });
-  });
-</script>
