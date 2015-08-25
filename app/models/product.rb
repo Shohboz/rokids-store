@@ -1,7 +1,16 @@
 class Product < ActiveRecord::Base
 	has_many :line_items
+  	attr_accessor :quantity
 
 	before_destroy :ensure_not_referenced_by_any_line_item
+
+  def quantity
+    @quantity || 1
+  end
+
+  def quantity=(value)
+    @quantity = value
+  end
 
 	def ensure_not_referenced_by_any_line_item
 		if line_items.empty?

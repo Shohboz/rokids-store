@@ -36,7 +36,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Hirb provides a mini view framework for console applications and uses it to improve ripl(irb)'s default inspect output.
-#gem 'hirb'
+gem 'hirb'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-turbolinks'

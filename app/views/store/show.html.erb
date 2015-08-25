@@ -13,37 +13,38 @@
       <div class="card-panel white">
         <div style="padding: 0.5rem;">
 
-          <ul>
-            <li>
-              <h5>
-                <%= @product.title %>
-              </h5>
-              <label>Артикул</label>
-              </p>
-            </li>
-          </ul>
+          <%= form_for(@product, method: :post, remote: true, url: line_items_path(product_id: @product)) do |f| %>
 
-          <br>
+            <ul>
+              <li>
+                <h5>
+                  <%= @product.title %>
+                </h5>
+                <label>Артикул</label>
+                </p>
+              </li>
+            </ul>
 
-          <label>Цена:</label>
+            <br>
 
-          <h5 class="price">
-            <%= number_to_currency(@product.price, :precision => (@product.price.round == @product.price) ? 0 : 2) %>
-          </h5>
+            <label>Цена:</label>
 
-          <br>
-          
-          <div class="input-field col s12" style="margin-bottom: 10px;">
-            <select>
-              <option value="" disabled selected>Выберите значение</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-            <label>Количество:</label>
-          </div>
+            <h5 class="price">
+              <%= number_to_currency(@product.price, :precision => (@product.price.round == @product.price) ? 0 : 2) %>
+            </h5>
 
-          <%= link_to 'Добавить в корзину', line_items_path(product_id: @product), class: "btn btn-large red accent-2 waves-effect waves-light modal-trigger", method: :post, remote: true %>
+            <br>
+
+            <div class="input-field col s12" style="margin-bottom: 10px;">
+              <%= select_tag :quantity, "<option value='' disabled selected>Выберите значение</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option>".html_safe %>
+              <label>Количество:</label>
+            </div>
+
+            <%= link_to 'Добавить в корзину', '#', class: "btn btn-large red accent-2 waves-effect waves-light modal-trigger", onclick: "$('form').submit()" %>
+            
+            <%= f.submit nil, style: "display: none;" %>
+            
+          <% end %>
 
         </div>
 
