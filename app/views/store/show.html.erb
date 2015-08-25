@@ -36,7 +36,7 @@
             <br>
 
             <div class="input-field col s12" style="margin-bottom: 10px;">
-              <%= select_tag :quantity, "<option value='' disabled selected>Выберите значение</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option>".html_safe %>
+              <%= select_tag :quantity, options_for_select((1..5).step(1).to_a.map{|s| ["#{s}", s]}) %>
               <label>Количество:</label>
             </div>
 
