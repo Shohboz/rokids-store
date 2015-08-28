@@ -27,6 +27,7 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     product = Product.find(params[:product_id])
+    product_attributes = params.reject { |key, value| product.product_attributes.find_by(title: key, id: value).nil? }
     @line_item = @cart.add_product(product.id, params[:quantity])
 
     respond_to do |format|

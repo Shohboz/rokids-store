@@ -26,6 +26,9 @@ hr {
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
+.plus-wrapper {
+	height: 2.5rem;
+}
 .card-image .product-image {
 	height: 100%;
 	background-repeat: no-repeat;
@@ -53,6 +56,15 @@ hr {
 		right: auto;
 		top: 5px;
 		
+		&:after {
+    		content: "";
+    	}
+	}
+}
+#plus-price {
+	span.badge.new {
+		position: static;
+		font-size: 1rem;
 		&:after {
     		content: "";
     	}

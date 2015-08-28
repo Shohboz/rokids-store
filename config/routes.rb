@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :product_attributes
+
   resources :orders
 
   resources :line_items
