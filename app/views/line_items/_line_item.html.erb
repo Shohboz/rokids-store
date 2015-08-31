@@ -1,5 +1,13 @@
-<tr>	
-	<td><%= line_item.product.title %></td>
+<tr>
+	<td class="collection-item-cart">
+		<div class="collection-item-container">
+			<%= image_tag(line_item.product.image_url, height: "100", class: "collection-image-cart") %>
+	    	<span class="title"><%= line_item.product.title %></span>
+	    	<ul>
+	    		<%= render line_item.line_item_attribute %>
+	    	</ul>
+    	</div>
+	</td>
 	<td><%= line_item.quantity %>&times;</td>
 	<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
 </tr>

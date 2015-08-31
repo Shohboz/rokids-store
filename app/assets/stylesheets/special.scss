@@ -10,6 +10,7 @@ $navbar-default-border: #fff;
 @import "materialize/components/color";
 $primary-color: color("cyan", "lighten-2") !default;
 $price-color: color("pink", "accent-2");
+$attributes-color: color("grey", "darken-1");
 
 @import "materialize/components/variables";
 .card.small .card-image {
@@ -68,5 +69,22 @@ hr {
 		&:after {
     		content: "";
     	}
+	}
+}
+#cart {
+	.collection-item-cart {
+		position: relative;
+		padding-left: 115px;
+		li {
+			color: $attributes-color;
+			font-size: 0.9rem;
+		}
+		.collection-item-container {
+			min-height: 80px;
+		}
+	}
+	.collection-image-cart {
+		position: absolute;
+		left: 15px;
 	}
 }

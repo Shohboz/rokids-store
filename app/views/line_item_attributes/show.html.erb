@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product attribute:</strong>
+  <%= @line_item_attribute.product_attribute %>
+</p>
+
+<p>
+  <strong>Line item:</strong>
+  <%= @line_item_attribute.line_item %>
+</p>
+
+<%= link_to 'Edit', edit_line_item_attribute_path(@line_item_attribute) %> |
+<%= link_to 'Back', line_item_attributes_path %>

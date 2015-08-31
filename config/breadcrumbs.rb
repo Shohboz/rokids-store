@@ -1,5 +1,5 @@
 crumb :root do
-  link "Главная страница", store_path
+  link "Каталог", store_path
 end
 
 crumb :products do

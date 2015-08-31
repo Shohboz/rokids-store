@@ -1,28 +1,40 @@
 <div id="cart">
 	<h4>Корзина</h4>
 	<br>
-	<table class="striped">
-		<% if @cart.line_items.length.zero? %>
-			<tr>
-				<td>
-					Корзина пуста
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<%= link_to 'В каталог', store_path, class: "btn btn-large cyan lighten-1 waves-effect waves-light" %>
-				</td>
-			</tr>
-		<% else %>
-			<%= render @cart.line_items %>
-			<tr class="total_line">
-				<td>
-					<%= link_to 'Оформить заказ', new_order_path, class: "btn btn-large cyan lighten-1 waves-effect waves-light" %>
-					<%= link_to 'Очистить корзину', @cart, class: "btn btn-large btn-flat waves-effect waves-light", method: :delete, remote: true %>
-				</td>
-				<td>Итог</td>
-				<td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-			</tr>
-		<% end %>
+	<table class="bordered">
+	<% if @cart.line_items.length.zero? %>
+		<tr>
+			<td>
+				Корзина пуста
+			</td>
+		</tr>
 	</table>
+
+	<br><br>
+
+	<div>
+		<%= link_to 'В каталог', store_path, class: "btn btn-large cyan lighten-1 waves-effect waves-light" %>
+	</div>
+	
+	<% else %>
+		<thead>
+        	<tr>
+            	<th data-field="title">Товарная позиция</th>
+            	<th data-field="quantity">Количество</th>
+            	<th data-field="price">Цена</th>
+        	</tr>
+        </thead>
+		<%= render @cart.line_items %>
+		<tr class="total_line">
+			<td></td>
+			<td>Итог</td>
+			<td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+		</tr>
+	</table>
+
+	<br><br>
+
+	<%= link_to 'Оформить заказ', new_order_path, class: "btn btn-large cyan lighten-1 waves-effect waves-light" %>
+	<%= link_to 'Очистить корзину', @cart, class: "btn btn-large btn-flat waves-effect waves-light", method: :delete, remote: true %>
+	<% end %>
 </div>
