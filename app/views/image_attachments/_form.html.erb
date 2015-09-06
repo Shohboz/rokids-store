@@ -1,0 +1,37 @@
+<%= form_for(@image_attachment) do |f| %>
+  <% if @image_attachment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image_attachment.errors.count, "error") %> prohibited this image_attachment from being saved:</h2>
+
+      <ul>
+      <% @image_attachment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :product_id %><br>
+    <%= f.number_field :product_id %>
+  </div>
+  
+  <%= f.label :image %><br>
+  <div class="field file-field input-field">
+    <div class="btn">
+      <span>File</span>
+      <%= f.file_field :image %>
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text">
+    </div>
+  </div>
+  
+  <br><br>
+
+  <%= link_to 'Submit', '#', class: "btn btn-large red accent-2 waves-effect waves-light", onclick: "$('form').submit()" %>
+  <%= f.submit nil, style: "display: none;" %>
+
+  <br><br>
+  
+<% end %>

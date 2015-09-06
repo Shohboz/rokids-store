@@ -20,6 +20,10 @@ end
 
 # Gretel is a Ruby on Rails plugin that makes it easy yet flexible to create breadcrumbs.
 gem 'gretel'
+# This gem provides a simple and extremely flexible way to upload files from Ruby applications.
+gem 'carrierwave'
+# RMagick is an interface between Ruby and ImageMagick.
+gem 'rmagick'
 
 gem 'sass-rails', '~> 5.0'
 # Bootstrap

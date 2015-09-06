@@ -6,12 +6,16 @@
   <div class="row">
     <div class="col l8 m8">
       <div class="col l12 m12">
-        <%= image_tag(@product.image_url, class: "materialboxed hoverable", width: "400") %>
+        <div class="gallery slider">
+          <% @product.image_attachments.each do |p| %>
+              <%= image_tag p.image_url, class: "materialboxed hoverable", height: "400" %>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="col l4 m4">
       <div class="card-panel white">
-        <div style="padding: 0.5rem;">
+        <div style="padding: 0.4rem;">
 
           <%= form_for(@product, method: :post, remote: true, url: line_items_path(product_id: @product)) do |f| %>
 
@@ -30,10 +34,10 @@
             <label>Цена:</label>
 
             <div class="row">
-              <h5 class="price col m6">
+              <h5 class="price col m7">
                 <%= number_to_currency(@product.price, :precision => (@product.price.round == @product.price) ? 0 : 2) %>
               </h5>
-              <div class="col m6 plus-wrapper valign-wrapper" id="plus-price">
+              <div class="col m5 plus-wrapper valign-wrapper" id="plus-price">
                 <span class="plus-price valign new badge"></span>
               </div>
             </div>
@@ -65,7 +69,7 @@
     </div>
   </div>
 
-  <ul class="collection with-header">
+  <ul class="collection with-header" style="margin-top: 100px;">
     <li class="collection-header">
       <div class="section">
         <h5>Информация о товаре</h5>
@@ -81,7 +85,8 @@
 <%= render partial: 'modal' %>
 
 <script type="text/javascript">
-  $(document).ready(function() {
+  //$(document).ready(function() {
+    $(document).on('ready page:load', function() {
     
     $(".js-plus-price").change(function() {
       var str = 0, text;
@@ -100,6 +105,9 @@
 
     if (!$('select').hasClass('initialized')){
       $('select').material_select();
+    }
+    if (!$('.gallery').hasClass('js-ready')){
+      $('.gallery').thumbGallery();
     }
   });
 </script>

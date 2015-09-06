@@ -35,7 +35,8 @@
 		  	<%= link_to store_show_path(product.id) do %>
 			    <div class="card-image">
 			      <!-- image_tag product.image_url -->
-			      <div class="product-image" style="background-image: url('<%= product.image_url %>')"></div>
+			      <!--div class="product-image" style="background-image: url('<%= product.image_url %>')"></div-->
+            <div class="product-image" style="background-image: url('<%= product.image_attachments.first ? product.image_attachments.first.image_url(:thumb).to_s : '' %>')"></div>
 			    </div>
 		    <% end %>
 		    <div class="card-action">
@@ -49,6 +50,7 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+  //  $(document).on('ready page:load', function() {
     if (!$('.slider').hasClass('initialized')){
 		  $('.slider').slider();
     }

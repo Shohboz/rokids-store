@@ -1,4 +1,4 @@
-<%= form_for(@product) do |f| %>
+<%= form_for(@product, :html => { :multipart => true }) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -27,7 +27,27 @@
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.fields_for :image_attachments do |p| %>
+    <%= f.label :image %><br>
+    <div class="field file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <%= p.file_field :image, :multiple => true, name: "image_attachments[image][]" %>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+    <br>
+  <% end %>
+
+  <br>
+  <br>
+
+  <%= link_to 'Submit', '#', class: "btn btn-large red accent-2 waves-effect waves-light", onclick: "$('form').submit()" %>
+  <%= f.submit nil, style: "display: none;" %>
+  
+  <br>
+  <br>
+  
 <% end %>

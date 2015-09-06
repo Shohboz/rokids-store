@@ -1,5 +1,5 @@
 <div id="cart">
-	<h4>Корзина</h4>
+	<h2 class="header">Корзина</h2>
 	<br>
 	<table class="bordered">
 	<% if @cart.line_items.length.zero? %>
@@ -38,3 +38,5 @@
 	<%= link_to 'Очистить корзину', @cart, class: "btn btn-large btn-flat waves-effect waves-light", method: :delete, remote: true %>
 	<% end %>
 </div>
+
+<br><br><br><br>

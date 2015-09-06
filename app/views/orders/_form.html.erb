@@ -28,9 +28,12 @@
     <%= f.text_field :pay_type %>
   </div-->
   <br>
+  <br>
 
-  <%= button_tag(type: 'submit', class: "btn btn-large red accent-2 waves-effect waves-light") do %>
-    Создать заявку
-  <% end %>
+  <%= link_to 'Создать заявку', '#', class: "btn btn-large red accent-2 waves-effect waves-light", onclick: "$('form').submit()" %>
+  <%= f.submit nil, style: "display: none;" %>
+
+  <br>
+  <br>
 
 <% end %>

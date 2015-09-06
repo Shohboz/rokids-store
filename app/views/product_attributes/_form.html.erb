@@ -27,7 +27,12 @@
     <%= f.label :product_id %><br>
     <%= f.text_field :product_id %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  <br><br>
+
+  <%= link_to 'Submit', '#', class: "btn btn-large red accent-2 waves-effect waves-light", onclick: "$('form').submit()" %>
+  <%= f.submit nil, style: "display: none;" %>
+
+  <br><br>
+  
 <% end %>

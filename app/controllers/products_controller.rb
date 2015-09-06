@@ -12,11 +12,13 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @image_attachments = @product.image_attachments.all
   end
 
   # GET /products/new
   def new
     @product = Product.new
+    @image_attachments = @product.image_attachments.build
   end
 
   # GET /products/1/edit
@@ -30,6 +32,9 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        params[:image_attachments]['image'].each do |a|
+          @image_attachments = @product.image_attachments.create!(:image => a)
+        end
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
@@ -43,6 +48,9 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
+      params[:image_attachments]['image'].each do |a|
+        @image_attachments = @product.image_attachments.create!(:image => a)
+      end
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
@@ -71,6 +79,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price)
+      params.require(:product).permit(:title, :description, :image_url, :price, image_attachments_attributes: [:id, :product_id, :image])
     end
 end

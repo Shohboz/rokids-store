@@ -74,7 +74,7 @@ hr {
 #cart {
 	.collection-item-cart {
 		position: relative;
-		padding-left: 115px;
+		padding-left: 135px;
 		li {
 			color: $attributes-color;
 			font-size: 0.9rem;
@@ -87,4 +87,16 @@ hr {
 		position: absolute;
 		left: 15px;
 	}
+}
+.cart-image {
+	object-fit: contain;
+	-o-object-fit: contain;
+	width: 200px;
+	&.collection-image-cart {
+		width: 100px;
+	}
+}
+.header {
+    color: #ee6e73;
+    font-weight: 300;
 }
