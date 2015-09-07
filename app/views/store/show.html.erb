@@ -57,7 +57,9 @@
               <label>Количество:</label>
             </div>
 
-            <%= link_to 'Добавить в корзину', '#', class: "btn btn-large red accent-2 waves-effect waves-light modal-trigger", onclick: "$('form').submit()" %>
+            <div class="center-align">
+              <%= link_to 'Добавить в корзину', '#', class: "btn btn-large red accent-2 waves-effect waves-light modal-trigger", onclick: "$('form').submit()" %>
+            </div>
             
             <%= f.submit nil, style: "display: none;" %>
             

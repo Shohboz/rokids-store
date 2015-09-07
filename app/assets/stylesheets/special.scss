@@ -13,8 +13,13 @@ $price-color: color("pink", "accent-2");
 $attributes-color: color("grey", "darken-1");
 
 @import "materialize/components/variables";
-.card.small .card-image {
-  height: 230px !important;
+.card {
+	.card-action {
+		height: 85px;
+	}
+	.card-image {
+  		height: 215px !important;
+  	}
 }
 
 main {
