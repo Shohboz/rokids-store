@@ -48,8 +48,10 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
-      params[:image_attachments]['image'].each do |a|
-        @image_attachments = @product.image_attachments.create!(:image => a)
+      unless params[:image_attachments].nil?
+        params[:image_attachments]['image'].each do |a|
+          @image_attachments = @product.image_attachments.create!(:image => a)
+        end
       end
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -79,6 +81,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price, image_attachments_attributes: [:id, :product_id, :image])
+      params.require(:product).permit(:title, :description, :image_url, :price)#, image_attachments_attributes: [:id, :product_id, :image])
     end
 end
