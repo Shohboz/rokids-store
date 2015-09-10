@@ -1,0 +1,17 @@
+<h2 class="header">Добро пожаловать!</h2>
+
+Имеется <%= pluralize @total_orders, "orders" %>
+
+<br><br>
+
+<h3 class="header">Ссылки</h3>
+
+<div class="collection">
+	<%= link_to 'Заказы', orders_path, class: "waves-effect waves-light collection-item" %>
+	<%= link_to 'Продукты', products_path, class: "waves-effect waves-light collection-item" %>
+	<%= link_to 'Администраторы', users_path, class: "waves-effect waves-light collection-item" %>
+	<%= link_to 'Товарные позиции', line_items_path, class: "waves-effect waves-light collection-item" %>
+	<%= link_to 'Корзины', carts_path, class: "waves-effect waves-light collection-item" %>
+	<%= link_to 'Изображения', image_attachments_path, class: "waves-effect waves-light collection-item" %>
+	<%= link_to 'Атрибуты продуктов', product_attributes_path, class: "waves-effect waves-light collection-item" %>
+</div>
