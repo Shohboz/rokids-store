@@ -29,9 +29,7 @@
 
             <label>Цена:</label>
 
-            <h5 class="price">
-              <%= number_to_currency(@product.price, :precision => (@product.price.round == @product.price) ? 0 : 2) %>
-            </h5>
+            <h5 class="price" id="total_price"></h5>
           </div>
         </div>
       </div>
