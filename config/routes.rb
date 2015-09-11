@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     delete 'logout' => :destroy
   end
 
+  resources :products do
+    get :who_bought, on: :member
+  end
+
   get 'sessions/new'
 
   get 'sessions/create'

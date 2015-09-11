@@ -29,11 +29,17 @@ class OrdersController < ApplicationController
   # POST /orders
   def create
     @order = Order.new(order_params)
+    @order.add_line_items_from_cart(@cart)
 
-    if @order.save
-      redirect_to store_url, notice: 'Order was successfully created.'
-    else
-      render :new
+    respond_to do |format|
+      if @order.save
+        Cart.destroy(session[:cart_id])
+        session[:cart_id] = nil
+        format.html { redirect_to store_url, notice: 'Спасибо, что сделали заказ в нашем магазине.' }
+      else
+        @cart = current_cart
+        render :new
+      end
     end
   end
 

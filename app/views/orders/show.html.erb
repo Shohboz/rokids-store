@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h4 class="header">Контактные данные пользователя</h4>
+<br>
 <p>
   <strong>Name:</strong>
   <%= @order.name %>
@@ -19,6 +21,21 @@
   <strong>Pay type:</strong>
   <%= @order.pay_type %>
 </p>
-
+<br>
+<br>
+<h5 class="header"><%= @order.name %> заказал следующие товарные позиции</h5>
+<br>
+<table class="bordered" id="order-table">
+	<thead>
+		<tr>
+	    	<th data-field="title">Товарная позиция</th>
+	    	<th data-field="quantity">Количество</th>
+	    	<th data-field="price">Цена</th>
+		</tr>
+	</thead>
+	<%= render partial: "line_items/line_item", collection: @order.line_items  %>
+</table>
+<br>
+<br>
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
