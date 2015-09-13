@@ -112,3 +112,20 @@ main {
 #error_explanation {
 	color: $error-color;
 }
+#paginator {
+	width: 220px;
+	margin: 0 auto;
+
+	ul.pagination {
+		height: 30px;
+
+		li {
+			a {
+				color: #ffab40;
+			}
+		}
+		.active {
+			color: white;
+		}
+	}
+}

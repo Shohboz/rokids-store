@@ -24,6 +24,8 @@ gem 'gretel'
 gem 'carrierwave'
 # RMagick is an interface between Ruby and ImageMagick.
 gem 'rmagick'
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
+gem 'kaminari'
 
 gem 'sass-rails', '~> 5.0'
 # Bootstrap

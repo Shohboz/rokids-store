@@ -27,25 +27,14 @@
     </li>
   </ul>
 </div>
-
 <div class="row" style="margin-top: 50px;">
-	<% @products.each do |product| %>
-		<div class="col s12 m4">
-		  <div class="card small hoverable card-image waves-effect waves-purple waves-block">
-		  	<%= link_to store_show_path(product.id) do %>
-			    <div class="card-image">
-			      <!-- image_tag product.image_url -->
-			      <!--div class="product-image" style="background-image: url('<%= product.image_url %>')"></div-->
-            <div class="product-image" style="background-image: url('<%= product.image_attachments.first ? product.image_attachments.first.image_url(:thumb).to_s : '' %>')"></div>
-			    </div>
-		    <% end %>
-		    <div class="card-action">
-		      <%= link_to product.title, store_show_path(product.id) %>
-		      <span class="price showcase"><%= number_to_currency(product.price, :precision => (product.price.round == product.price) ? 0 : 2) %></span>
-		    </div>
-		  </div>
-		</div>
-	<% end %>
+  <div id="products">
+    <%= render partial: "store/product", collection: @products  %>
+  </div>
+</div>
+
+<div id="paginator" class="center-paginator">
+  <%= paginate @products %>
 </div>
 
 <script type="text/javascript">

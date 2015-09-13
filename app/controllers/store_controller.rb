@@ -4,7 +4,7 @@ class StoreController < ApplicationController
   before_action :set_cart
   
   def index
-  	@products = Product.order(:title)
+  	@products = Product.order(:title).page(params[:page]).per(12)
   end
 
   def show
