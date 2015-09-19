@@ -2,4 +2,4 @@ $('#notice').hide();
 
 $('#cart').html("<%= escape_javascript render(@cart) %>");
 $('#cart-badge').html("<%= escape_javascript render partial: 'carts/badge', object: @cart %>");
-$('#total_price').html("<%= escape_javascript render partial: 'store/product', object: @line_item %>");
+$('#total_price').html("<%= escape_javascript render partial: 'store/products', object: @line_item %>");
