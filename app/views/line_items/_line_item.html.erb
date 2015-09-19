@@ -1,6 +1,6 @@
 <tr>
 	<td class="table-action">
-		<%= link_to line_item, method: :delete, class: "waves-effect waves-light"  do %>
+		<%= link_to line_item, method: :delete, data: { position: "bottom", delay: "50", tooltip: "Удалить" }, class: "tooltipped waves-effect waves-light"  do %>
             <i class="fa header fa-times-circle fa-2"></i>
         <% end %>
     </td>

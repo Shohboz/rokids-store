@@ -13,7 +13,7 @@
           <%= link_to 'Контакты', contacts_path, class: "waves-effect waves-light" %>
         </li>
       	<li>
-          <%= link_to @cart, class: "waves-effect waves-light"  do %>
+          <%= link_to @cart, class: "waves-effect waves-light tooltipped", data: { position: "bottom", delay: "50", tooltip: "В корзину" }  do %>
             <i class="fa fa-shopping-cart"></i>
             <div id="cart-badge">
               <%= render partial: 'carts/badge', object: @cart %>
