@@ -1,7 +1,11 @@
 .gallery {
-	.hoverable:hover {
-	    -webkit-transition: initial;
-	    transition: initial;
+	.hoverable {
+		&:hover {
+	    	-webkit-transition: initial;
+	    	transition: initial;
+	    }
+    	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
+    	object-fit: contain;
 	}
 	.materialboxed {
 		transition: initial;
