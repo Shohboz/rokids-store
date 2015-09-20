@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  include CurrentCart
-  before_action :set_cart
+  include CurrentCart, CategoriesAvailable
+  before_action :set_cart, :categories
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users

@@ -1,10 +1,12 @@
 class StoreController < ApplicationController
   skip_before_action :authorize
-  include CurrentCart
-  before_action :set_cart
+  include CurrentCart, CategoriesAvailable
+  before_action :set_cart, :categories
   
   def index
-  	@products = Product.order(:title).page(params[:page]).per(12)
+    category = params[:category] && @categories.find(params[:category])
+    @store = category
+    @products = (category && category.products || Product).order(:title).page(params[:page]).per(12)
   end
 
   def show

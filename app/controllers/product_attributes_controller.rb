@@ -1,6 +1,6 @@
 class ProductAttributesController < ApplicationController
-  include CurrentCart
-  before_action :set_cart
+  include CurrentCart, CategoriesAvailable
+  before_action :set_cart, :categories
   before_action :set_product_attribute, only: [:show, :edit, :update, :destroy]
 
   # GET /product_attributes

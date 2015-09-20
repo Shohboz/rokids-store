@@ -11,8 +11,13 @@ crumb :product do |product|
   parent :products
 end
 
+crumb :category do |category|
+  link category.title, store_path(:category => category.id)
+end
+
 crumb :store do |product|
 	link product.title, product
+	parent :category, product.categories.first if product.categories.first
 end
 
 # crumb :projects do
