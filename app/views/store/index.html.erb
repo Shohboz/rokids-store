@@ -5,12 +5,12 @@
 <% unless @store %>
   <%= render "slider" %>
 <% else %>
-  <% breadcrumb :category, @products.first.categories.first %>
+  <% breadcrumb :category, @products.first.categories.first if @products && @products.first %>
 <% end %>
 
 <div class="row" style="margin-top: 50px;">
   <div id="products">
-    <%= render partial: "store/product", collection: @products  %>
+    <%= render partial: "store/product", collection: @products %>
   </div>
 </div>
 

@@ -46,7 +46,7 @@
 
             <% @group_products.each do |attribute, attributes| %>
               <div class="input-field col s12">
-                <%= select_tag "#{attribute}", options_for_select(attributes.collect {|n| ["#{n.value}" + (n.price ? " (+#{number_to_currency(n.price, :precision => (n.price.round == n.price) ? 0 : 2)})" : ""), n.id]}), class: "js-plus-price" %>
+                <%= select_tag "#{attribute}", options_for_select(attributes.collect {|n| ["#{n.value}" + ((n.price && n.price != 0) ? " (+#{number_to_currency(n.price, :precision => (n.price.round == n.price) ? 0 : 2)})" : ""), n.id]}), class: "js-plus-price" %>
                 <label><%= attribute %>:</label>
               </div>
               <br>
@@ -97,7 +97,7 @@
           str += parseInt(/\d+/.exec(text[0].split(" ").join(""))[0], 10);
         }
       });
-      $("#plus-price span").text('+' + str + ' <%= number_to_currency 0, :precision => 0 %>'.split('0').join(''));
+      $("#plus-price span").text(str ? ('+' + str + ' <%= number_to_currency 0, :precision => 0 %>'.split('0').join('')) : '');
     }).trigger("change");
 
     $('.modal-trigger').on('click', function(){

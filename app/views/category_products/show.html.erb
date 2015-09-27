@@ -2,12 +2,12 @@
 
 <p>
   <strong>Product:</strong>
-  <%= @category_product.product %>
+  <%= @category_product.product.id if @category_product.product %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @category_product.category %>
+  <%= @category_product.category.id if @category_product.category %>
 </p>
 
 <%= link_to 'Edit', edit_category_product_path(@category_product) %> |

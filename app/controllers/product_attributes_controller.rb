@@ -26,7 +26,7 @@ class ProductAttributesController < ApplicationController
     @product_attribute = ProductAttribute.new(product_attribute_params)
 
     if @product_attribute.save
-      redirect_to @product_attribute, notice: 'Product attribute was successfully created.'
+      redirect_to product_attributes_url, notice: 'Product attribute was successfully created.'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class ProductAttributesController < ApplicationController
   # PATCH/PUT /product_attributes/1
   def update
     if @product_attribute.update(product_attribute_params)
-      redirect_to @product_attribute, notice: 'Product attribute was successfully updated.'
+      redirect_to product_attributes_url, notice: 'Product attribute was successfully updated.'
     else
       render :edit
     end

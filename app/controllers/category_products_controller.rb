@@ -33,7 +33,7 @@ class CategoryProductsController < ApplicationController
   # PATCH/PUT /category_products/1
   def update
     if @category_product.update(category_product_params)
-      redirect_to @category_product, notice: 'Category product was successfully updated.'
+      redirect_to category_products_url, notice: 'Category product was successfully updated.'
     else
       render :edit
     end
