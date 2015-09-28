@@ -18,3 +18,8 @@
 
 # Ignore images
 /public/uploads/image_attachment
+
+# Ignore Capistrano files
+/config/deploy/
+/config/deploy.rb
+/shared/
