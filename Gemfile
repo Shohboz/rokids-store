@@ -4,8 +4,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 
+gem 'pg'
+
 group :production, :postgresql do
-  gem 'pg'
+  # gem 'pg'
 end
 
 group :development, :test do
@@ -15,7 +17,7 @@ group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  # gem 'sqlite3'
   # Capistrano
   gem 'capistrano'
   gem 'capistrano-rails'
