@@ -32,7 +32,10 @@
 
 <script type="text/javascript">
   $(document).on('ready page:load', function() {
-    $('select').select2({
+    $('#category_product_product_id').select2({
+      theme: "bootstrap"
+    });
+    $('#category_product_category_id').select2({
       theme: "bootstrap"
     });
   });
