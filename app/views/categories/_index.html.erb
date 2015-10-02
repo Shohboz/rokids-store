@@ -6,3 +6,13 @@
     <%= link_to category.title, store_path(:category => category.id), class: "truncate waves-effect waves-light" %>
   </li>
 <% end %>
+
+
+<% if session[:user_id] %>
+	<li class="dashboard">
+		<%= link_to "Dashboard", admin_path, class: "truncate waves-effect waves-light" %>
+	</li>
+	<li class="dashboard">
+		<%= link_to "Logout", logout_path, method: :delete, class: "truncate waves-effect waves-light" %>
+	</li>
+<% end %>

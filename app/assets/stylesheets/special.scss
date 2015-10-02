@@ -4,6 +4,7 @@ $price-color: color("pink", "accent-2");
 $attributes-color: color("grey", "darken-1");
 $error-color: color("red", "accent-2");
 $input-placeholder-color: color("blue-grey", "lighten-5");
+$dashboard-sidenav-links-color: #ee6e73;
 
 @import "materialize/components/variables";
 .card {
@@ -21,7 +22,16 @@ header, main, footer {
     	width: 90%;
     }
 }
+
 header {
+	.dashboard {
+		a {
+			color: $dashboard-sidenav-links-color !important;
+		}
+	}
+	nav .input-field input {
+		font-size: 1.1rem;
+	}
 	ul.search-box {
     	width: 300px;
     	li {
