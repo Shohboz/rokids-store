@@ -1,0 +1,14 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+
+<div class="row" style="margin-top: 50px;">
+  <div id="products">
+    <p class="flow-text"><%= "Нет данных для отображения" if @products.empty? %></p>
+    <%= render partial: "store/product", collection: @products %>
+  </div>
+</div>
+
+<div id="paginator" class="center-paginator">
+  <%= paginate @products %>
+</div>

@@ -2,6 +2,14 @@ class StoreController < ApplicationController
   skip_before_action :authorize
   include CurrentCart, CategoriesAvailable
   before_action :set_cart, :categories
+
+  def search
+    if params[:search].present?
+      @products = Product.search params[:search], misspellings: {edit_distance: 3, transpositions: true, partial: true}
+    else
+      @products = Product.order(:title).page(params[:page]).per(12)
+    end
+  end
   
   def index
     category = params[:category] && @categories.find(params[:category])

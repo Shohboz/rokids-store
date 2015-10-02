@@ -3,6 +3,7 @@ $primary-color: color("cyan", "lighten-2") !default;
 $price-color: color("pink", "accent-2");
 $attributes-color: color("grey", "darken-1");
 $error-color: color("red", "accent-2");
+$input-placeholder-color: color("blue-grey", "lighten-5");
 
 @import "materialize/components/variables";
 .card {
@@ -20,6 +21,35 @@ header, main, footer {
     	width: 90%;
     }
 }
+header {
+	ul.search-box {
+    	width: 300px;
+    	li {
+    		width: 100%;
+    		#search {
+    			width: 90%;
+    			&:focus {
+					border: none;
+					box-shadow: initial;
+				}
+    		}
+    	}
+	    // placeholder styles
+		::-webkit-input-placeholder {color: $input-placeholder-color;}
+		::-moz-placeholder          {color: $input-placeholder-color;}/* Firefox 19+ */
+		:-moz-placeholder           {color: $input-placeholder-color;}/* Firefox 18- */
+		:-ms-input-placeholder      {color: $input-placeholder-color;}
+
+		#search::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.5s ease;}
+		#search::-moz-placeholder                {opacity: 1; transition: opacity 0.5s ease;}
+		#search::-moz-placeholder                {opacity: 1; transition: opacity 0.5s ease;}
+		#search::-ms-input-placeholder           {opacity: 1; transition: opacity 0.5s ease;}
+		#search:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.5s ease;}
+		#search:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.5s ease;}
+		#search:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.5s ease;}
+		#search:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.5s ease;}
+    }
+}
 
 li.logo {
 	height: 64px;
@@ -28,9 +58,17 @@ li.logo {
 	}
 }
 
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width: 992px) {
 	header, main, footer {
   		padding-left: 0;
+  		
+	}
+}
+@media only screen and (min-width: 1280px) {
+	header {
+		ul.search-box {
+			width: 600px;
+		}
 	}
 }
 

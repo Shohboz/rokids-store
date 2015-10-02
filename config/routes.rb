@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   get 'store/payment', as: 'payment'
   get 'store/contacts', as: 'contacts'
   get 'store/index'
+  get 'store/search', to: 'store#search', as: 'store_search'
   get 'store/:id', to: 'store#show', as: 'store_show'
   resources :products
 

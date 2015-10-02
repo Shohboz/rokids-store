@@ -5,6 +5,17 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse">
         <i class="mdi-navigation-menu"></i>
       </a>
+      <ul class="left search-box">
+        <li>
+          <%= form_tag store_search_path, method: :get, role: "search" do %>
+            <div class="input-field">
+              <%= text_field_tag :search, params[:search], placeholder: " Поиск по сайту", class: "form-control" %>
+              <label for="search"><i class="mdi-action-search"></i></label>
+              <%= submit_tag "Search", name: nil, style: "display: none;" %>
+            </div>
+          <% end %>
+        </li>
+      </ul>
       <ul id="nav-mobile" class="right">
       	<li class="hide-on-med-and-down">
           <%= link_to 'Оплата и доставка', payment_path, class: "waves-effect waves-light" %>

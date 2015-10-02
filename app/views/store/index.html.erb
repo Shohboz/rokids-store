@@ -5,7 +5,7 @@
 <% unless @store %>
   <%= render "slider" %>
 <% else %>
-  <% breadcrumb :category, @products.first.categories.first if @products && @products.first %>
+  <% breadcrumb :category, @products.first.categories.first unless @products.empty? %>
 <% end %>
 
 <div class="row" style="margin-top: 50px;">

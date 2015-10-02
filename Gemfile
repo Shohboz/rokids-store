@@ -23,7 +23,8 @@ group :development, :test do
   gem 'capistrano-rvm'
   gem 'capistrano-secrets-yml', '~> 1.0.0'
 end
-
+# Intelligent search made easy with Rails and Elasticsearch
+gem 'searchkick'
 # Gretel is a Ruby on Rails plugin that makes it easy yet flexible to create breadcrumbs.
 gem 'gretel'
 # This gem provides a simple and extremely flexible way to upload files from Ruby applications.
