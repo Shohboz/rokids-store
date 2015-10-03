@@ -15,6 +15,7 @@ class StoreController < ApplicationController
     category = params[:category] && @categories.find(params[:category])
     @store = category
     @products = (category && category.products || Product).order(:title).page(params[:page]).per(12)
+    @slides = Slide.all
   end
 
   def show

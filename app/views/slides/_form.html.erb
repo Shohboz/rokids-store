@@ -1,0 +1,44 @@
+<%= form_for(@slide, :html => { :multipart => true }) do |f| %>
+  <% if @slide.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@slide.errors.count, "error") %> prohibited this slide from being saved:</h2>
+
+      <ul>
+      <% @slide.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <div class="field file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <%= f.file_field :image %>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
+  </div>
+  
+  <br>
+  <br>
+
+  <%= link_to 'Submit', '#', class: "btn btn-large red accent-2 waves-effect waves-light", onclick: "$('form').submit()" %>
+  <%= f.submit nil, style: "display: none;" %>
+
+  <br>
+  <br>
+  
+<% end %>

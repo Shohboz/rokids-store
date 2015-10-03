@@ -17,7 +17,7 @@
 /tmp
 
 # Ignore images
-/public/uploads/image_attachment
+/public/uploads
 
 # Ignore Capistrano files
 /config/deploy/
