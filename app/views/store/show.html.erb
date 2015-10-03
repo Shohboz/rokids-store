@@ -24,8 +24,12 @@
                 <h5>
                   <%= @product.title %>
                 </h5>
-                <label>Артикул</label>
-                </p>
+                <% if @product.article %>
+                  <label>Артикул</label>
+                  <h6>
+                    <%= @product.article %>
+                  </h6>
+                <% end %>
               </li>
             </ul>
 
@@ -58,10 +62,10 @@
             </div>
 
             <div class="center-align">
-              <%= link_to 'Добавить в корзину', '#', class: "btn btn-large red accent-2 waves-effect waves-light modal-trigger", onclick: "$('form').submit()" %>
+              <%= link_to 'Добавить в корзину', '#', class: "btn btn-large red accent-2 waves-effect waves-light modal-trigger", onclick: "$('#line_item_add').submit()" %>
             </div>
             
-            <%= f.submit nil, style: "display: none;" %>
+            <%= f.submit nil, id: "line_item_add", style: "display: none;" %>
             
           <% end %>
 

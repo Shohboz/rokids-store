@@ -22,8 +22,12 @@
                 <h5>
                   <%= @product.title %>
                 </h5>
-                <label>Артикул</label>
-                </p>
+                <% if @product.article %>
+                  <label>Артикул</label>
+                  <h6>
+                    <%= @product.article %>
+                  </h6>
+                <% end %>
               </li>
             </ul>
 
