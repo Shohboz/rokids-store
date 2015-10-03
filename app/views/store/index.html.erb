@@ -3,7 +3,7 @@
 <% end %>
 
 <% unless @store %>
-  <%= render "slider" %>
+  <%= render "slider" unless @slides.empty? %>
 <% else %>
   <% breadcrumb :category, @products.first.categories.first unless @products.empty? %>
 <% end %>
