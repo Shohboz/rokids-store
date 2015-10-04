@@ -24,7 +24,7 @@
                 <h5>
                   <%= @product.title %>
                 </h5>
-                <% if @product.article %>
+                <% unless @product.article.to_s.empty? %>
                   <label>Артикул</label>
                   <h6>
                     <%= @product.article %>

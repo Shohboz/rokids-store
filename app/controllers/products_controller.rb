@@ -23,16 +23,16 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @image_attachments = (@product.image_attachments.all unless @product.image_attachments.all.length == 0) || @product.image_attachments.build
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
     respond_to do |format|
       if @product.save
-        if params[:image_attachments]
+        unless params[:image_attachments].nil?
           params[:image_attachments]['image'].each do |a|
             @image_attachments = @product.image_attachments.create!(:image => a)
           end
@@ -40,6 +40,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
+        @image_attachments = @product.image_attachments.build
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end

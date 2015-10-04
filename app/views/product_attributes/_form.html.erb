@@ -25,7 +25,6 @@
   </div>
   <div class="field">
     <%= f.label :product_id %><br>
-    <!--= f.text_field :product_id -->
     <%= f.select(:product_id, Product.all.collect {|n| [n.title, n.id] }, class: "form-control", id: "product_attributes_product", multiple: true) %>
   </div>
 
