@@ -32,8 +32,10 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        params[:image_attachments]['image'].each do |a|
-          @image_attachments = @product.image_attachments.create!(:image => a)
+        if params[:image_attachments]
+          params[:image_attachments]['image'].each do |a|
+            @image_attachments = @product.image_attachments.create!(:image => a)
+          end
         end
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
