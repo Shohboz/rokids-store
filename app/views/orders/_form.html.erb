@@ -1,7 +1,7 @@
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h4 class="header">Проблемы возникли со следующими полями:</h4>
+      <h4 class="header">Возникли проблемы со следующими полями:</h4>
 
       <ul>
       <% @order.errors.full_messages.each do |message| %>
@@ -11,21 +11,69 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label "Ваше ФИО (фамилия, имя и отчество)" %><br>
-    <%= f.text_field :name %>
+  <h5 class="light">Паспортные данные</h5>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="field col s12">
+          <%= f.label "Ваше ФИО (фамилия, имя и отчество)" %>
+          <%= f.text_field :name %>
+        </div>
+      </div>
+    </div>
   </div>
-  <br>
-  <div class="field">
-    <%= f.label "Адрес доставки" %><br>
-    <%= f.text_area :address %>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="field col s6">
+          <%= f.label "Серия" %>
+          <%= f.text_field :series, :length => "4" %>
+        </div>
+        <div class="field col s6">
+          <%= f.label "Номер" %>
+          <%= f.text_field :number, :length => "6" %>
+        </div>
+      </div>
+    </div>
   </div>
-  <br>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email, type: "email", class: "validate" %>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="field col s12">
+          <%= f.label "Когда и кем выдан" %>
+          <%= f.text_area :issue, class: "materialize-textarea" %>
+        </div>
+      </div>
+    </div>
   </div>
-  <br>
+
+  <h5 class="light">Контактные данные</h5>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="field col s12">
+          <%= f.label "Адрес доставки" %>
+          <%= f.text_area :address, class: "materialize-textarea" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="field col s12">
+          <%= f.label :email %>
+          <%= f.text_field :email, type: "email", class: "validate" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <br>
 
   <%= link_to 'Создать заявку', '#', class: "btn btn-large red accent-2 waves-effect waves-light", onclick: "$('form').submit()" %>

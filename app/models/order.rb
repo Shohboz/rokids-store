@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-	validates :name, :address, :email, presence: true
+	validates :name, :email, presence: true
 	has_many :line_items, dependent: :destroy
 
 	def add_line_items_from_cart(cart)
