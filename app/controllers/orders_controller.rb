@@ -38,8 +38,9 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
         format.html { redirect_to store_url, notice: 'Спасибо, что сделали заказ в нашем магазине.' }
       else
-        @cart = current_cart
-        render :new
+        #@cart = current_cart
+        #render :new
+        format.html { render action: 'new' }
       end
     end
   end
