@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "Ваше имя" %><br>
+    <%= f.label "Ваше ФИО (фамилия, имя и отчество)" %><br>
     <%= f.text_field :name %>
   </div>
   <br>
   <div class="field">
-    <%= f.label "Адрес" %><br>
+    <%= f.label "Адрес доставки" %><br>
     <%= f.text_area :address %>
   </div>
   <br>
@@ -25,10 +25,6 @@
     <%= f.label :email %><br>
     <%= f.text_field :email, type: "email", class: "validate" %>
   </div>
-  <!--div class="field">
-    <%= f.label :pay_type %><br>
-    <%= f.text_field :pay_type %>
-  </div-->
   <br>
   <br>
 
