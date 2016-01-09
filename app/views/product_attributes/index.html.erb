@@ -17,7 +17,7 @@
         <td><%= product_attribute.value %></td>
         <td><%= product_attribute.price %></td>
         <td><%= product_attribute.title %></td>
-        <td><%= product_attribute.product.title %></td>
+        <td><%= product_attribute.product && product_attribute.product.title %></td>
         <td><%= link_to 'Show', product_attribute %></td>
         <td><%= link_to 'Edit', edit_product_attribute_path(product_attribute) %></td>
         <td><%= link_to 'Destroy', product_attribute, method: :delete, data: { confirm: 'Are you sure?' } %></td>

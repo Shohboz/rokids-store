@@ -209,3 +209,11 @@ main {
 .select2.select2-container {
 	width: initial !important;
 }
+
+.slides {
+	.caption {
+		background-color: $primary-color;
+		padding: 20px;
+		opacity: 0.8 !important;
+	}
+}
