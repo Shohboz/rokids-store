@@ -11,53 +11,12 @@
     </div>
   <% end %>
 
-  <h5 class="light">Паспортные данные</h5>
-
   <div class="row">
     <div class="col s12">
       <div class="row">
         <div class="field col s12">
-          <%= f.label "Ваше ФИО (фамилия, имя и отчество)" %>
-          <%= f.text_field :name %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="field col s6">
-          <%= f.label "Серия" %>
-          <%= f.text_field :series, :length => "4" %>
-        </div>
-        <div class="field col s6">
-          <%= f.label "Номер" %>
-          <%= f.text_field :number, :length => "6" %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="field col s12">
-          <%= f.label "Когда и кем выдан" %>
-          <%= f.text_area :issue, class: "materialize-textarea" %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <h5 class="light">Контактные данные</h5>
-
-  <div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="field col s12">
-          <%= f.label "Адрес доставки" %>
-          <%= f.text_area :address, class: "materialize-textarea" %>
+          <%= f.label "Город доставки" %>
+          <%= f.text_field :address, class: "materialize-textarea" %>
         </div>
       </div>
     </div>
