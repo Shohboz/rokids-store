@@ -57,7 +57,7 @@
             <% end %>
 
             <div class="input-field col s12" style="margin-bottom: 10px;">
-              <%= select_tag :quantity, options_for_select((1..5).step(1).to_a.map{|s| [s, s]}), class: 'select_tag' %>
+              <%= number_field_tag :quantity, '1', min: 1,  placeholder: 1, required: 'required', class: 'form-control' %>
               <label>Количество:</label>
             </div>
 
