@@ -1,10 +1,13 @@
 @import "materialize/components/color";
-$primary-color: color("cyan", "lighten-2") !default;
-$price-color: color("pink", "accent-2");
+$primary-color: color("cyan", "darken-1") !default;
+// $price-color: color("pink", "accent-3");
+$price-color: color("red", "accent-3");
 $attributes-color: color("grey", "darken-1");
 $error-color: color("red", "accent-2");
 $input-placeholder-color: color("blue-grey", "lighten-5");
 $dashboard-sidenav-links-color: #ee6e73;
+$warning-color: color("orange", "accent-3");
+$header-color: color("red", "lighten-3");
 
 @import "materialize/components/variables";
 .card {
@@ -61,7 +64,7 @@ header {
     }
 }
 
-li.logo {
+li.logo, .cart-container {
 	height: 64px;
 	a {
 		line-height: 64px;
@@ -85,6 +88,10 @@ li.logo {
 main {
 	min-height: 400px;
 	padding-top: 50px;
+}
+
+body {
+	background-color: #fcfcfc;
 }
 
 hr {
@@ -116,11 +123,13 @@ hr {
 }
 #cart-badge {
 	span.badge.new {
+		position: absolute;
 		line-height: 20px;
 		min-width: auto;
 		left: 35px;
 		right: auto;
 		top: 5px;
+		background-color: $header-color;
 		
 		&:after {
     		content: "";
@@ -162,7 +171,7 @@ hr {
 	}
 }
 .header {
-    color: #ee6e73;
+    color: $header-color;
     font-weight: 300;
 }
 main {
@@ -180,7 +189,7 @@ main {
 
 		li {
 			a {
-				color: #ffab40;
+				color: $warning-color;
 			}
 		}
 		.active {
@@ -212,8 +221,8 @@ main {
 
 .slides {
 	.caption {
-		background-color: $primary-color;
+		background-color: color("cyan", "darken-2");
 		padding: 20px;
-		opacity: 0.8 !important;
+		opacity: 0.6 !important;
 	}
 }
