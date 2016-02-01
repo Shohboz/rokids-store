@@ -44,6 +44,17 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="field col s12">
+          <%= f.label "Комментарии" %>
+          <%= f.text_area :comments, type: "text", class: "materialize-textarea" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <br>
 
   <%= link_to 'Создать заявку', '#', class: "btn btn-large red accent-2 waves-effect waves-light", onclick: "$('form').submit()" %>
