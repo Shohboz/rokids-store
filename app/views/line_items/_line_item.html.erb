@@ -6,7 +6,7 @@
     </td>
 	<td class="collection-item-cart">
 		<div class="collection-item-container">
-			<%= image_tag(line_item.product.image_attachments.first().image_url.to_s, height: "100", class: "cart-image collection-image-cart") %>
+			<%= image_tag(line_item.product.image_attachments.first().image_url.to_s, height: "100", alt: "", class: "cart-image collection-image-cart") unless line_item.product.image_attachments.empty? %>
 	    	<span class="title"><%= line_item.product.title %></span>
 	    	<ul>
 	    		<%= render line_item.line_item_attribute %>

@@ -1,0 +1,19 @@
+<h3>
+	Заказ из интернет магазина "Спорт-юниор" отправлен
+</h3>
+
+<p>
+	Это сообщение уведомляет Вас, что мы отправили Ваш недавний заказ:
+</p>
+
+<table>
+	<thead>
+    	<tr>
+    		<th></th>
+        	<th data-field="title">Товарная позиция</th>
+        	<th data-field="quantity">Количество</th>
+        	<th data-field="price">Цена</th>
+    	</tr>
+    </thead>
+	<%= render @order.line_items -%>
+</table>
