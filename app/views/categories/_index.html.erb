@@ -1,5 +1,10 @@
-<li class="logo">
+<!--li class="logo">
   <%= link_to "Logo", store_path, id: "logo-container", class: "brand-logo center-align" %>
+</li-->
+<li class="logo">
+	<a id="logo-container" href="/" class="brand-logo">
+    	<object id="front-page-logo" class="object-brand" type="image/svg+xml" data="/assets/logo.svg">На главную</object>
+	</a>
 </li>
 <% @categories && @categories.each do |category| %>
   <li>
