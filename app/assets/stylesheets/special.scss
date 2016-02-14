@@ -8,6 +8,7 @@ $input-placeholder-color: color("blue-grey", "lighten-5");
 $dashboard-sidenav-links-color: #ee6e73;
 $warning-color: color("orange", "accent-3");
 $header-color: color("red", "lighten-3");
+$bg-color: color("blue-grey", "lighten-5");
 
 @import "materialize/components/variables";
 .card {
@@ -91,7 +92,23 @@ main {
 }
 
 body {
-	background-color: #fcfcfc;
+	background-color: $bg-color;
+	.material-placeholder {
+		background-color: $bg-color;
+	}
+	.gallery {
+		background-color: transparent;
+	}
+	table {
+		background-color: #fff;
+		td {
+			padding: 20px;
+		}
+	}
+	.list-container {
+		background-color: #fff;
+		padding: 20px;
+	}
 }
 
 hr {

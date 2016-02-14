@@ -7,25 +7,34 @@
   <%= @order.name %>
 </p-->
 
-<p>
-  <strong>Адрес:</strong>
-  <%= @order.address %>
-</p>
+<div class="list-container z-depth-1">
+  <p>
+    <strong>Адрес:</strong>
+    <%= @order.address %>
+  </p>
 
-<p>
-  <strong>Указана почта:</strong>
-  <%= @order.email %>
-</p>
+  <p>
+    <strong>Указана почта:</strong>
+    <%= @order.email %>
+  </p>
 
-<p>
-  <strong>Контактный телефон:</strong>
-  <%= @order.tel %>
-</p>
+  <p>
+    <strong>Контактный телефон:</strong>
+    <%= @order.tel %>
+  </p>
 
-<p>
-  <strong>Комментарии клиента:</strong>
-  <%= @order.comments %>
-</p>
+  <p>
+    <strong>Комментарии клиента:</strong>
+    <textarea class="materialize-textarea">
+      <%= @order.comments %>
+    </textarea>
+  </p>
+
+  <p>
+    <strong>Статус:</strong>
+    <%= @order.status %>
+  </p>
+</div>
 
 <!--p>
   <strong>Серия паспорта:</strong>
