@@ -31,6 +31,11 @@ Rails.application.routes.draw do
   resources :product_attributes
 
   resources :orders
+  resources :orders do
+    member do
+      post 'shipped'
+    end
+  end
 
   resources :line_items
   resources :carts

@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   skip_before_action :authorize, only: [:new, :create]
   include CurrentCart, CategoriesAvailable
   before_action :set_cart, :categories
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :shipped]
   before_action :set_cart, only: [:new, :create]
 
   # GET /orders
@@ -59,6 +59,16 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     redirect_to orders_url, notice: 'Order was successfully destroyed.'
+  end
+
+  def shipped
+    @order.change_status(:shipped)
+    if @order.save
+      respond_to do |format|
+        OrderNotifier.shipped(@order).deliver
+        format.html { redirect_to @order, notice: 'Статус обновлен, сообщение об отправке заказа выслано на почту.' }
+      end
+    end
   end
 
   private

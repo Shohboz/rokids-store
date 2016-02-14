@@ -22,6 +22,10 @@ class Order < ActiveRecord::Base
 		STATUS
 	end
 
+	def change_status(new_status)
+		self.status = STATUS[new_status]
+	end
+
 	def self.valid_status
 		STATUS.keys
 	end

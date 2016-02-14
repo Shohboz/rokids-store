@@ -1,6 +1,104 @@
+<p id="notice"><%= notice %></p>
+
 <h2 class="header">Редактирование заказа</h2>
 
-<%= render 'form' %>
+<%= form_for(@order) do |f| %>
+  
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h4 class="header">Возникли проблемы со следующими полями:</h4>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="list-container z-depth-1">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="row">
+          <div class="field col s12">
+            <%= f.label "Город доставки" %>
+            <%= f.text_field :address, class: "materialize-textarea" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="row">
+          <div class="field col s12">
+            <%= f.label :email %>
+            <%= f.text_field :email, type: "email", class: "validate" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="row">
+          <div class="field col s12">
+            <%= f.label "Контактный телефон" %>
+            <%= f.text_field :tel, type: "tel", class: "validate" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="row">
+          <div class="field col s12">
+            <%= f.label "Комментарии" %>
+            <%= f.text_area :comments, type: "text", class: "materialize-textarea" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% if session[:user_id] %>
+      <div class="row">
+        <div class="col s10">
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.select :status, Order.status.collect {|n| Order.status[n[0]]}, id: 'order_status' %>
+              <%= f.label "Статус" %>
+            </div>
+          </div>
+        </div>
+        <div class="col s2">
+        	<%= f.label "Отправить письмо" %>
+        	<div class="input-field col s12">
+	        	<%= link_to shipped_order_path(@order), method: :post, title: "Известить пользователя о высланном товаре", class: "waves-effect waves-light" do %>
+					<i class="fa fa-2 fa-send fa-silver"></i>
+				<% end %>
+			</div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <%= link_to 'Создать заявку', '#', class: "btn btn-large red accent-2 waves-effect waves-light", onclick: "$('form').submit()" %>
+  <%= f.submit nil, style: "display: none;" %>
+
+  <br>
+  <br>
+
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#order_status').material_select();
+  });
+</script>
 
 <%= link_to 'Show', @order %> |
 <%= link_to 'Back', orders_path %>
