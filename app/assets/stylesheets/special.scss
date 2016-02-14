@@ -9,6 +9,7 @@ $dashboard-sidenav-links-color: #ee6e73;
 $warning-color: color("orange", "accent-3");
 $header-color: color("red", "lighten-3");
 $bg-color: color("blue-grey", "lighten-5");
+$success-message: #4CAF50;
 
 @import "materialize/components/variables";
 .card {
@@ -89,6 +90,10 @@ li.logo, .cart-container {
 main {
 	min-height: 400px;
 	padding-top: 50px;
+}
+
+#notice {
+	color: $success-message;
 }
 
 body {
