@@ -1,5 +1,6 @@
 class Order < ActiveRecord::Base
 	validates :email, presence: true
+	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 #	validates :status, inclusion: {in: valid_status}, presence: true
 	has_many :line_items, dependent: :destroy
 
