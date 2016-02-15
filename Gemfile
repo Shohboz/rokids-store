@@ -51,6 +51,8 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+# Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem 'figaro'
 
 # Hirb provides a mini view framework for console applications and uses it to improve ripl(irb)'s default inspect output.
 gem 'hirb'
