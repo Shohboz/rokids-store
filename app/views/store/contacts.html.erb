@@ -1,5 +1,5 @@
 <p class="flow-text">
 Связаться с нами Вы можете написав администратору:<br>
-1. test@test.com<br>
-2. http://vk.com/id_belkasport
+1. <%= link_to 'письмо', "mailto:#{ ENV['_FIGARO_EMAIL'] }", class: "waves-effect waves-light" %><br>
+2. <%= link_to 'сообщение в группе vk', ENV['_FIGARO_VK'], target: "_blank", class: "waves-effect waves-light" %>
 </p>

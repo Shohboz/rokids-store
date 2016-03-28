@@ -6,9 +6,9 @@
         <p class="grey-text text-lighten-4">
           <span class="fa fa-home"></span> Киров, Россия<br>
           <span class="fa fa-envelope-o"></span>
-          <%= link_to 'test@test.com', 'mailto:test@test.com?subject=From footer', class: "white-text waves-effect waves-light" %><br>
+          <%= link_to ENV['_FIGARO_EMAIL'], "mailto:#{ ENV['_FIGARO_EMAIL'] }?subject=From footer", class: "white-text waves-effect waves-light" %><br>
           <span class="fa fa-vk"></span>
-          <%= link_to 'группа вконтакте', '//vk.com/club_belkasport', class: "white-text waves-effect waves-light" %>
+          <%= link_to 'группа вконтакте', ENV['_FIGARO_VK'], target: "_blank", class: "white-text waves-effect waves-light" %>
         </p>
       </div>
       <div class="col l2 s12">
@@ -17,7 +17,7 @@
       </div>
       <div class="col l3 s12">
         <h5 class="white-text">Спорт-юниор</h5>
-        <%= link_to 'Отзывы', 'https://vk.com/topic-79619609_32215641', class: "white-text waves-effect waves-light" %>
+        <%= link_to 'Отзывы', '//vk.com/topic-79619609_32215641', target: "_blank", class: "white-text waves-effect waves-light" %>
       </div>
       <div class="col l3 s12" style="overflow: hidden;">        
         <p class="grey-text text-lighten-4">Информация представленная на сайте не является технической документацией.</p>
@@ -27,7 +27,7 @@
   <div class="footer-copyright">
     <div class="container">
     © 2016 Спорт-юниор - интернет магазин детских спортивных комплексов.
-    <a class="grey-text text-lighten-4 right" href="#">shohboz</a>
+    <a class="grey-text text-lighten-4 right" href="mailto:<%= ENV['_FIGARO_DEV_EMAIL'] %>">shohboz</a>
     </div>
   </div>
 </footer>
