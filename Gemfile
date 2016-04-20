@@ -25,6 +25,8 @@ group :development, :test do
 end
 # Framework-agnostic XML Sitemap generator written in Ruby with automatic Rails integration.
 gem 'sitemap_generator'
+# Simple Ruby on Rails plugin for creating meta tags.
+gem 'metamagic'
 # Intelligent search made easy with Rails and Elasticsearch
 gem 'searchkick'
 # Gretel is a Ruby on Rails plugin that makes it easy yet flexible to create breadcrumbs.
