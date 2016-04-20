@@ -153,6 +153,8 @@ GEM
       hashie
     select2-rails (4.0.0)
       thor (~> 0.14)
+    sitemap_generator (5.1.0)
+      builder
     sprockets (3.2.0)
       rack (~> 1.0)
     sprockets-rails (2.3.2)
@@ -216,6 +218,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   searchkick
   select2-rails
+  sitemap_generator
   sqlite3
   turbolinks
   tzinfo-data

@@ -39,9 +39,9 @@ Rails.application.routes.draw do
 
   resources :line_items
   resources :carts
-  get 'store/payment', as: 'payment'
-  get 'store/contacts', as: 'contacts'
-  get 'store/about', as: 'about'
+  get 'payment', to: 'store#payment', as: 'payment'
+  get 'contacts', to: 'store#contacts', as: 'contacts'
+  get 'about', to: 'store#about', as: 'about'
   get 'store/index'
   get 'store/search', to: 'store#search', as: 'store_search'
   get 'store/:id', to: 'store#show', as: 'store_show'
