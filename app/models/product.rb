@@ -1,5 +1,9 @@
+require 'babosa'
+
 class Product < ActiveRecord::Base
 	searchkick
+	extend FriendlyId
+	friendly_id :slug_candidates, use: [:slugged, :finders]
 	validates :title, :price, presence: true
 	has_many :line_items
 	has_many :category_products
@@ -18,6 +22,17 @@ class Product < ActiveRecord::Base
 
 	def quantity=(value)
 	  @quantity = value
+	end
+
+	def slug_candidates
+    [
+      :title,
+      [:title, :id]
+    ]
+  	end
+
+	def normalize_friendly_id(text)
+		text.to_s.to_slug.normalize(transliterations: :russian).to_s
 	end
 
 	def ensure_not_referenced_by_any_line_item

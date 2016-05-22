@@ -1,12 +1,12 @@
 <div class="col s12 m4">
   <div class="card small hoverable card-image waves-effect waves-purple waves-block">
-    <%= link_to store_show_path(product.id) do %>
+    <%= link_to store_show_path(product) do %>
       <div class="card-image">
         <div class="product-image" style="background-image: url('<%= product.image_attachments.first ? product.image_attachments.first.image_url(:thumb).to_s : '' %>')"></div>
       </div>
     <% end %>
     <div class="card-action">
-      <%= link_to product.title, store_show_path(product.id) %>
+      <%= link_to product.title, store_show_path(product) %>
       <span class="price showcase"><%= number_to_currency(product.price, :precision => (product.price.round == product.price) ? 0 : 2) %></span>
     </div>
   </div>

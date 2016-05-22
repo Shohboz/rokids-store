@@ -19,7 +19,7 @@ class StoreController < ApplicationController
   end
 
   def show
-  	@product = Product.find(params[:id])
+    @product = Product.find(params[:id])
     @group_products = @product.product_attributes.group_by {|item| item.title}
   end
 
