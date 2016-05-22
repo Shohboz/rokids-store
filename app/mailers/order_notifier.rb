@@ -22,4 +22,10 @@ class OrderNotifier < ActionMailer::Base
 
     mail to: order.email, subject: 'Заказ отправлен.'
   end
+
+  def ordered(order)
+    @order = order
+
+    mail to: ENV['EMAIL'], subject: 'Новый заказ!'
+  end
 end
