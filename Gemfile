@@ -15,7 +15,7 @@ group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  gem 'sqlite3', '1.3.11'
   # Capistrano
   gem 'capistrano'
   gem 'capistrano-rails'
@@ -74,7 +74,8 @@ group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
